@@ -13,13 +13,28 @@ export default class App extends Component {
         ],
         showCars:false
     }
+    nameChangerHandler = (event, id) =>{
+      const nameCarIndex = this.state.cars.findIndex(carIndex => {
+        return carIndex.id === id;
+      });
+
+      const carObj = {...this.state.cars[nameCarIndex]}
+      carObj.carName = event.target.value;
+      const updatedCars = [...this.state.cars];
+      updatedCars[nameCarIndex] = carObj;
+      this.setState({
+        cars:updatedCars
+      })
+    }
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <Cockpit  />   
-          <CarsList cars={this.state.cars} /> 
+          <CarsList 
+          cars={this.state.cars}
+          nameChanger={this.nameChangerHandler} /> 
         </header>
       </div>
     );

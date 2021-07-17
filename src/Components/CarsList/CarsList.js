@@ -10,7 +10,8 @@ function CarsList(props) {
                     carName={car.carName} 
                     milesCoverd={car.miles}
                     key={car.id}
-                    clicked={() =>props.delHandler(index)}/>
+                    clicked={() =>props.delHandler(index)}
+                    changed={(event) => props.nameChanger(event, car.id)}/>
                 })
             }
         </div>
