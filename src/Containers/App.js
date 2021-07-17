@@ -26,6 +26,14 @@ export default class App extends Component {
         cars:updatedCars
       })
     }
+
+    ondelHandler = (indexIdCar) => {
+      const indexIdCars = [...this.state.cars];
+      indexIdCars.splice(indexIdCar, 1);
+      this.setState({
+        cars:indexIdCars
+      })
+    }
   render() {
     return (
       <div className="App">
@@ -34,7 +42,8 @@ export default class App extends Component {
           <Cockpit  />   
           <CarsList 
           cars={this.state.cars}
-          nameChanger={this.nameChangerHandler} /> 
+          nameChanger={this.nameChangerHandler}
+          delHandler={this.ondelHandler} /> 
         </header>
       </div>
     );
