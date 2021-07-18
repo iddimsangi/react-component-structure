@@ -34,16 +34,30 @@ export default class App extends Component {
         cars:indexIdCars
       })
     }
+    onToggle = () =>{
+      const showCarTr = this.state.showCars;
+      this.setState({
+        showCars:!showCarTr
+      })
+    }
   render() {
+    let toggleMessage = null;
+    if(this.state.showCars){
+      toggleMessage = (
+        <CarsList 
+          cars={this.state.cars}
+          nameChanger={this.nameChangerHandler}
+          delHandler={this.ondelHandler} 
+          boxes={this.state.cars}
+          setBoxes={this.state.cars}/> 
+      )
+    }
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <Cockpit  />   
-          <CarsList 
-          cars={this.state.cars}
-          nameChanger={this.nameChangerHandler}
-          delHandler={this.ondelHandler} /> 
+          <Cockpit clickToggle={this.onToggle} />   
+          {toggleMessage}
         </header>
       </div>
     );
