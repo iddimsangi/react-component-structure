@@ -1,16 +1,12 @@
 import React from 'react'
 import './Car.css'
 export default function Car(props) {
+    const{ carName, milesCoverd} = props.carObj
     return (
-        <div 
-        className="car-box"
-        draggable={true}
-        onDragOver={(ev) => ev.preventDefault()}
-        onDragStart={props.handleDrag}
-        onDrop={props.handleDrop}>
-            <p>Hey there!.This is {props.carName} and {props.milesCoverd} covered.</p>
+        <div className="car-box">
+            <p>Hey there!.This is {carName} and {milesCoverd} covered.</p>
             <button onClick={props.clicked}>delete card</button>
-            <input type="text" onChange={props.changed} />
+            <input type="text" onChange={props.changed}/>
         </div>
     )
 }

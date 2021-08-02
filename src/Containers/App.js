@@ -9,7 +9,7 @@ export default class App extends Component {
           {id:'009', carName:'BMW', miles:'5000km'},
           {id:'002', carName:'BENz', miles:'35000km'},
           {id:'008', carName:'IST', miles:'50900km'},
-          {id:'900', carName:'RANGE ROVER', miles:'588000km'},
+          {id:'900', carName:'RANGE ROVER', miles:'588000km'}
         ],
         showCars:false
     }
@@ -48,8 +48,7 @@ export default class App extends Component {
           cars={this.state.cars}
           nameChanger={this.nameChangerHandler}
           delHandler={this.ondelHandler} 
-          boxes={this.state.cars}
-          setBoxes={this.state.cars}/> 
+      /> 
       )
     }
     return (
@@ -63,7 +62,6 @@ export default class App extends Component {
     );
   }
 }
-
 
 
 
