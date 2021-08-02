@@ -12,7 +12,7 @@ console.log(props);
                     // milesCoverd={car.miles}
                     key={car.id}
                     carObj = {car}
-                    clicked={() =>props.delHandler(index)}
+                    clicked={() =>props.delHandler(car.id)}
                     changed={(event) => props.nameChanger(event, car.id)}
                    />
                 })

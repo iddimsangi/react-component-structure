@@ -27,11 +27,19 @@ export default class App extends Component {
       })
     }
 
-    ondelHandler = (indexIdCar) => {
-      const indexIdCars = [...this.state.cars];
-      indexIdCars.splice(indexIdCar, 1);
+    // ondelHandler = (indexIdCar) => {
+    //   const indexIdCars = [...this.state.cars];
+    //   indexIdCars.splice(indexIdCar, 1);
+    //   this.setState({
+    //     cars:indexIdCars
+    //   })
+    // }
+    ondelHandler =(id) => {
+      const updatedCars = this.state.cars.filter(car =>{
+        return car.id !== id;
+      })
       this.setState({
-        cars:indexIdCars
+        cars:updatedCars
       })
     }
     onToggle = () =>{
